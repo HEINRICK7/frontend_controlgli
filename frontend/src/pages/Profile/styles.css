@@ -1,0 +1,138 @@
+.profile-container {
+ display: inline;
+
+}
+.profile-container header {
+    background-color: #ED5757;
+    padding:10px;
+    margin-bottom: 50px;
+}
+.profile-container header span {
+    display: flex;
+    font-size: 20px;
+    padding: 10px;
+    color: snow;   
+}
+.profile-container header button {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    background: transparent;
+    margin:-40px 10px -10px -10px;
+    float: right;
+    
+}
+.profile-container header span p {
+    margin-left: 20px;
+    
+    
+}
+.profile-container header span .dashboard {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFF;
+    margin:0 50px 0px 120px;
+    
+    
+}
+.profile-container  a {
+    width: 260px;
+    margin-left:40%;
+}
+
+
+.profile-container ul li button.icon {
+    width: 50px;  
+    background: rgb(255, 255, 255);
+    color: #ED5757;
+    
+}
+.profile-container header button:hover {
+    border-color: rgb(10, 10, 10);
+}
+.profile-container h1{
+    margin-top: 80px;
+    margin-bottom: 24px;
+    text-align: center;
+  
+}
+.profile-container .card ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;  
+    
+}
+.profile-container .card ul li{
+    padding: 24px;
+    position: relative;
+    margin: 10px auto;
+    width: 300px;
+    height: 300px;
+    box-shadow: 2px 2px 20px -10px rgba(68, 57, 57, 0.993), -5px -5px 30px 7px rgba(197, 193, 193, 0.22);
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.profile-container ul li button {
+    position: absolute;
+    right: 24px;
+    top:24px;
+    border: 0;
+}
+.profile-container ul li button:hover {
+    opacity: 0.8;
+}
+.profile-container ul li strong {
+    display:flex;
+    margin-top:30px ;
+    margin-bottom: 10px;
+    color: #595961;
+}
+.profile-container ul li p{
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+    margin-left: 5px;   
+}
+@media all and (max-width: 500px){
+    .profile-container header{
+        padding:5px;
+    }
+    
+    .profile-container header span p {
+        font-size: 12px;
+        margin-left: 5px;
+        font-weight: 900;
+       
+    }
+    .profile-container header button {
+        float: right;
+        
+    }
+    .profile-container  a {
+        width: 260px;
+        margin-left:14%;
+    }
+    .profile-container h1{
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 24px;
+        padding:0px 5px 0px 5px;
+        color:#737380;
+
+      
+    }
+    .profile-container .card ul{
+      display:block;
+     
+    }
+    .profile-container header span .dashboard {
+        margin:0 0 0 50px;
+        
+        
+    }
+     
+  }
+  

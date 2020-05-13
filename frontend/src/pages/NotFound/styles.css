@@ -1,0 +1,12 @@
+.notfould h1 {
+    color: rgb(2, 2, 2);
+    font-size: 200px;
+    font-weight: 900;
+    margin-left: 50px;
+}
+.notfould p{
+    color: rgb(153, 152, 152);
+    font-size: 150px;
+    font-weight: 900;
+    margin-left: 100px;
+}
