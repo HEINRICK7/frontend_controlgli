@@ -2,7 +2,7 @@ import axios from 'axios';
 import {getToken} from '../services/auth'
 
 const api = axios.create({
-    baseURL: 'http://localhost:3334',
+    baseURL: 'http://ec2-18-214-211-47.compute-1.amazonaws.com',
 });
 
 api.interceptors.request.use(async config =>{
