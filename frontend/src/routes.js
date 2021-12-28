@@ -25,19 +25,21 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-export default function Routes(){
+const Routes = () => {
     return (
         <ToastProvider>
-            <BrowserRouter>
-                <Switch>
-                    <Route path="/" exact component={Login} />
-                    <Route path="/register" exact component={Register} />
-                    <PrivateRoute path="/profile" exact component={Profile} />
-                    <PrivateRoute path="/results/new" exact component={NewResult} />
-                    <PrivateRoute path="/dashboard" exact component={Dashboard} />
-                    <Route component={NotFound} />
-                </Switch>
-            </BrowserRouter>
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact component ={Login} />
+              <Route path="/register" exact component ={Register} />
+              <PrivateRoute path="/profile" exact component ={Profile} />
+              <PrivateRoute path="/results/new" exact component ={NewResult} />
+              <PrivateRoute path="/dashboard" exact component ={Dashboard} />
+              <Route component={ NotFound } />
+            </Switch>
+          </BrowserRouter>      
         </ToastProvider>
     )
 }
+
+export default Routes;

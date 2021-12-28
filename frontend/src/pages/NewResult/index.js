@@ -11,15 +11,16 @@ import '../../global.css';
 import api from '../../services/api';
 
 export default function NewResult(){
+    const history = useHistory();
+    
     const [result, setResult] = useState('');
     const [description, setDescription] = useState('');
     const [created_at, setCreated_at] = useState('');
 
     const { addToast } = useToasts();
 
-    const history = useHistory();
-
-    const userId = localStorage.getItem('userId');
+    const token = localStorage.getItem('token');
+    const id = localStorage.getItem('userId');
 
     async function handleNewResult(e){
         e.preventDefault();
@@ -32,10 +33,10 @@ export default function NewResult(){
 
         if(result !== '' && description !== '' && created_at !== ''){
             try{
-                await api.post('results', data, {
-                   headers: {
-                       Authorization : userId,
-                   }
+                await api.post(`/users/${id}/results`, data, {
+                    headers: {
+                        "Authorization" : `Bearer ${token}`
+                    }
                 })
 
                 addToast('Resultado salvo com sucesso.', {

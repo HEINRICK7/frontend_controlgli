@@ -1,11 +1,12 @@
 .logon-container {
- padding: 10px;
- display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 70px;
+  height: 100vh;
   
 }
 .logon-container section.form {
-  margin:30px 30px 0 50px;
-  max-width:500px;
+  padding: 50px;
 
 }
 
@@ -17,7 +18,8 @@
  
 }
 .logon-container section.form form {
-  align-items: center;
+  width: 60%;
+  margin: 0 auto;
   margin-top: 28px;
   color: #41414d;
   font-size: 14px;
@@ -39,9 +41,7 @@
 
 }
 .logon-container .content{
-  max-width: 540px;
-  float: right;
-  margin:30px 30px 0 50px;
+  padding: 50px;
 }
 .logon-container .content img{
  margin-top: 50px;
@@ -56,10 +56,162 @@
   height: 40px;
   font-size: 20px;
 }
-@media all and (max-width: 500px){
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
   .logon-container {
-    display:block;
-   
-   }
-   
+    display: block;
+    
+  }
+  .logon-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .logon-container {
+    display: block;
+    
+  }
+  .logon-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .logon-container {
+    display: block;
+    
+  }
+  .logon-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 411px) and (max-width: 850px) {
+  .logon-container {
+    display: block;
+    
+  }
+  .logon-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 300px) and (max-width: 480px) {
+  
+  .logon-container {
+    display: block; 
+    width: 100vw;
+    height: 100vh;
+    padding: 8px;
+    
+  }
+  .logon-container section.form {
+    padding: 0px;
+    width: 100%;
+  
+  }
+  .logon-container section.form form {
+    padding: 0;
+    width: 100%;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  .logon-container .content{
+    padding: 0;
+  }
+  .logon-container .content img{
+   margin-top: 50px;
+   width: 100%;
+   margin-bottom: 10px;
+  }
+  .logon-container .content h3{
+    width: 100%;
+    color:#ED5758;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 80px;
+  }
+  
 }

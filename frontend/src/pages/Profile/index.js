@@ -10,7 +10,7 @@ import Moment from 'react-moment';
 import './styles.css';
 import '../../global.css';
 
-export default function Profile(){
+const Profile = () => {
 
     const [results, setResults] = useState([]);
 
@@ -18,27 +18,26 @@ export default function Profile(){
 
     const history = useHistory();
 
+    const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
-    const userName = localStorage.getItem('userName');
     const userDate = localStorage.getItem('userDate');
     
     useEffect(() => {
        api.get('profile', {
-           headers: {
-            Authorization: userId,
-
-           }
+        headers: {
+            "Authorization" : `Bearer ${token}`
+        }
        }).then(response => {
         setResults(response.data);
         
        })
-    }, [userId]);
+    }, [token]);
    
-    async function handleDeleteResult(id) {
+    const handleDeleteResult = async (id) => {
         try {
-            await api.delete(`results/${id}`,{
+            await api.delete(`results/${userId}`,{
                 headers: {
-                    Authorization: userId,
+                    "Authorization" : `Bearer ${token}`
                 }
             })
             addToast('resultado deletado com sucesso', { 
@@ -46,7 +45,7 @@ export default function Profile(){
                 autoDismiss: true,
                
             });
-            setResults(results.filter(incident=> incident.id !== id))
+            setResults(results.filter(incident => incident.id !== id))
         }
         catch(err){
 
@@ -57,20 +56,44 @@ export default function Profile(){
             });
         }
     }
-
-    function handleLogout(){
+   
+    const handleLogout = () => {
         localStorage.clear();
 
         history.push('/')
     }
+    const calculaIdade = ([data]) => {
+        const anoNascParts = data.split("/")
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        const diaNasc = anoNascParts[0];
+        const mesNasc = anoNascParts[1];
+        const anoNasc = anoNascParts[2];
+        
 
+        let idade = anoAtual - anoNasc;
+        const mesAtual = dataAtual.getMonth() + 1;
 
+        if(mesAtual < mesNasc) {
+            idade--;
+        }
+        else{
+            if(mesAtual === mesNasc) {
+                if(new Date().getDate() < diaNasc){
+                    idade--;
+                }
+            }
+        }
+
+        return idade;
+    }
+    console.log(results)
     return (
         <div className="profile-container">
             <header>
                 <span> 
                     <FiUser color="FFF" size={20}/>  
-                     <p>{userName}</p>
+                     <p>{}</p>
                      <Link className="dashboard" to="/dashboard">Dashboard</Link>
                 </span>
                 
@@ -84,16 +107,14 @@ export default function Profile(){
             <div className="card">
             <ul>
                 {results.map(result => (
-                    <li key={result.id}>
+                    <li key={result._id}>
                         <strong>
-                            Nome:<p>{ userName}</p>
+                            Nome:<p>{ result.user_id.map((res) => res.first_name )}</p>
                         </strong>
 
                         <strong>Idade:  
                             <p>
-                                {
-                                 new Date().getFullYear() - userDate.split("/")[2] 
-                                } Anos
+                                {calculaIdade(result.user_id.map((res) => res.date ))} Anos 
                             </p>
                         </strong>
                         <strong>RESULTADO:
@@ -107,7 +128,7 @@ export default function Profile(){
                         <strong>DATA:
                             <p>
                             <Moment format= "DD/MM/YYYY">
-                                {result.created_at}
+                                {result.date}
                             </Moment>
                             </p>
                         </strong>
@@ -121,3 +142,5 @@ export default function Profile(){
         </div>
     );
 }
+
+export default Profile;

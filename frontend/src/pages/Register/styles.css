@@ -1,12 +1,12 @@
 .register-container {
-  display:flex;
+  height: 100vh;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
  
 }
 
 .register-container section {
-  max-width: 500px;
-  border-radius: 8px;
-  padding: 10px;
+  width: 100%;
 }
 .register-container section h2 {
   font-size: 32px;
@@ -20,7 +20,8 @@
 
 }
 .register-container section form {
-  max-width: 500px;
+  padding: 80px;
+  width: 100%;
 
 }
 .register-container section form a {
@@ -42,11 +43,12 @@
   margin-top: 20px;
 }
 .register-container .content{
-  max-width: 540px;
-  float: right;
-  margin:125px 30px 0 50px;
+  margin-top: 40px;
+  padding:80px;
+
 }
 .register-container .content img{
+  margin: 0 auto;
   width: 100%;
 }
 .register-container .content h3{
@@ -59,13 +61,151 @@
   
 
 }
-@media all and (max-width: 600px){
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
   .register-container {
-   display:block;
+    display: block;
+    
   }
+  .register-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .register-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .register-container {
+    display: block;
+    
+  }
+  .register-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .register-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .register-container {
+    display: block;
+    
+  }
+  .register-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .register-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 411px) and (max-width: 850px) {
+  .register-container {
+    display: block;
+    
+  }
+  .register-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .register-container section.form {
+    width: 100%;
+
+  }
+  
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 300px) and (max-width: 480px) {
+  
+  .register-container {
+    display: block; 
+    width: 100vw;
+    height: 100vh;
+    
+  }
+  .register-container section.form {
+    padding: 0px;
+    width: 100%; 
+  
+  }
+  .register-container section form {
+    padding: 10px;
+    width: 100%;
+    color: #41414d;
+   
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  
   .register-container .content{
-    float: initial;
-    margin:20px 30px 0 50px;
+    padding: 10px;
+  }
+  .register-container .content img{
+   margin-top: 50px;
+   width: 100%;
+   margin-bottom: 10px;
   }
 
 }

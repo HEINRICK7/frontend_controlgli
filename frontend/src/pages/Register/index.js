@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 import registerGliImg from '../../assets/gli/register.svg';
 import Bounce from 'react-reveal/Bounce';
-import InputMask from 'react-input-mask';
 
 import { useToasts } from 'react-toast-notifications';
 
@@ -23,7 +22,7 @@ export default function Register() {
 
     const history = useHistory();
 
-    async function handleRegister(e) {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         const data = {
@@ -32,34 +31,25 @@ export default function Register() {
             date,
             email,
             password,
-         } 
+         }  
 
-        const response = await api.post('users',data);
-
-        if ( firstName !== '' && lastName !== '' && date !== '' && email !== '' && password !== ''){
-
-            if(response.status === 201){
-               addToast('Usuário cadastrado com esse email no banco de dados, tente com outro email.', {
-                   appearance: 'error',
-                   autoDismiss: true,
-               })
-            }else{
-                addToast('Usuário cadastrado com sucesso.', {
-                    appearance: 'success',
-                    autoDismiss: true,
-                })
-
-                history.push('/');
-
-            }
-        }else{
-
-            addToast('Preencha todos os campos.', {
+        await api.post('/users',data)
+        .then(response => {
+            
+            console.log(response.data)
+            addToast(response.data.message, {
+                appearance: 'success',
+                autoDismiss: true,
+            })
+        history('/session')
+        }).catch(error => {
+            console.log(error.response) 
+            addToast(error.response.data.message, {
                 appearance: 'info',
                 autoDismiss: true,
             })
-
-        }
+            
+        }) 
     
     }
   
@@ -87,7 +77,8 @@ export default function Register() {
                             />
                        
 
-                            <InputMask mask="99/99/9999"  
+                            <input
+                                type="text" 
                                 placeholder='dd/mm/aaaa'
                                 value={date}
                                 onChange={ e => setDate(e.target.value)}
