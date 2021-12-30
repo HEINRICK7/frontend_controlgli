@@ -2,3 +2,75 @@
     padding: 50px;
     margin: 0 50px 50px 50px;
 }
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .chart {
+        padding: 50px;
+        margin: 0 50px 50px 50px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    .chart {
+        padding: 50px;
+        margin: 0 50px 50px 50px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    .chart {
+        padding: 0px;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 80vh;
+    }
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 411px) and (max-width: 850px) {
+    .chart {
+        padding: 0px;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 80vh;
+    }
+     
+    
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 300px) and (max-width: 480px) {
+    
+    .chart {
+        padding: 0px;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 80vh;
+    }
+  }
+  

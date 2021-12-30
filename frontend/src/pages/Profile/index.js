@@ -1,9 +1,10 @@
 import React ,{useState, useEffect }from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2, FiUser} from 'react-icons/fi';
+import { FiTrash2, } from 'react-icons/fi';
 import { useToasts  } from 'react-toast-notifications';
 import api from '../../services/api';
 import Moment from 'react-moment';
+import NavBar from '../../components/Nav'
 
 //import controlGliImg from '../../assets/gli/Group 1.svg';
 
@@ -16,11 +17,7 @@ const Profile = () => {
 
     const { addToast } = useToasts();
 
-    const history = useHistory();
-
     const token = localStorage.getItem('token');
-    const userId = localStorage.getItem('userId');
-    const userDate = localStorage.getItem('userDate');
     
     useEffect(() => {
        api.get('profile', {
@@ -32,10 +29,12 @@ const Profile = () => {
         
        })
     }, [token]);
-   
+
     const handleDeleteResult = async (id) => {
+        
         try {
-            await api.delete(`results/${userId}`,{
+           
+            await api.delete(`results/${id}`,{
                 headers: {
                     "Authorization" : `Bearer ${token}`
                 }
@@ -45,7 +44,9 @@ const Profile = () => {
                 autoDismiss: true,
                
             });
-            setResults(results.filter(incident => incident.id !== id))
+            setResults(results.filter(incident => incident._id !== id))
+            
+            
         }
         catch(err){
 
@@ -57,51 +58,38 @@ const Profile = () => {
         }
     }
    
-    const handleLogout = () => {
-        localStorage.clear();
-
-        history.push('/')
-    }
     const calculaIdade = ([data]) => {
+        
         const anoNascParts = data.split("/")
         const dataAtual = new Date();
         const anoAtual = dataAtual.getFullYear();
-        const diaNasc = anoNascParts[0];
-        const mesNasc = anoNascParts[1];
-        const anoNasc = anoNascParts[2];
+        const diaNasc = Number(anoNascParts[0]);
+        const mesNasc = Number(anoNascParts[1]);
+        const anoNasc = Number(anoNascParts[2]);
         
-
-        let idade = anoAtual - anoNasc;
         const mesAtual = dataAtual.getMonth() + 1;
-
-        if(mesAtual < mesNasc) {
-            idade--;
+        const diaAtual = dataAtual.getDate();
+        let idade = anoAtual - anoNasc;
+  
+         if(mesAtual === mesNasc && diaAtual < diaNasc) {
+              return idade
         }
-        else{
-            if(mesAtual === mesNasc) {
-                if(new Date().getDate() < diaNasc){
-                    idade--;
-                }
-            }
+         if(mesAtual === mesNasc && diaAtual > diaNasc) {
+              return idade = idade + 1
+        }
+        if(mesAtual === mesNasc && diaAtual <= diaNasc) {
+              return idade = idade + 1
+        }
+        else {
+        return idade
         }
 
-        return idade;
     }
     console.log(results)
+    
     return (
         <div className="profile-container">
-            <header>
-                <span> 
-                    <FiUser color="FFF" size={20}/>  
-                     <p>{}</p>
-                     <Link className="dashboard" to="/dashboard">Dashboard</Link>
-                </span>
-                
-                <button type="button" onClick={handleLogout}>
-                    <FiPower color="FFF" size={20}/> 
-                </button>
-               
-            </header> 
+            < NavBar />
             <Link className="button" to="/results/new">Cadastrar novo resultado</Link>
             <h1> Resultados Cadastrados</h1>
             <div className="card">
@@ -117,11 +105,11 @@ const Profile = () => {
                                 {calculaIdade(result.user_id.map((res) => res.date ))} Anos 
                             </p>
                         </strong>
-                        <strong>RESULTADO:
-                            <p style={{color:"#ED5656"}}>{result.result} ml/dl</p> 
+                        <strong>
+                            <p style={{color:"#ED5656", fontSize:50}}>{result.result} ml/dl</p> 
                         </strong>
 
-                        <strong>DESCRIÇÃO:
+                        <strong>
                             <p>{result.description}</p> 
                         </strong>
 
@@ -132,7 +120,7 @@ const Profile = () => {
                             </Moment>
                             </p>
                         </strong>
-                        <button className="icon" type='button' onClick={()=> handleDeleteResult(result.id)}>
+                        <button className="icon" type='button' onClick={()=> handleDeleteResult(result._id)}>
                             <FiTrash2 size={20}/>
                         </button>
                     </li> 

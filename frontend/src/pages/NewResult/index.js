@@ -15,7 +15,7 @@ export default function NewResult(){
     
     const [result, setResult] = useState('');
     const [description, setDescription] = useState('');
-    const [created_at, setCreated_at] = useState('');
+    const [date, setDate] = useState('');
 
     const { addToast } = useToasts();
 
@@ -27,11 +27,11 @@ export default function NewResult(){
 
         const data ={
             result,
-            created_at,
+            date,
             description,
         }
 
-        if(result !== '' && description !== '' && created_at !== ''){
+        if(result !== '' && description !== '' && date !== ''){
             try{
                 await api.post(`/users/${id}/results`, data, {
                     headers: {
@@ -89,8 +89,8 @@ export default function NewResult(){
                         />
                         <input
                             type="date"
-                            value={created_at}
-                            onChange= {e => setCreated_at(e.target.value)}
+                            value={date}
+                            onChange= {e => setDate(e.target.value)}
                         />
 
                         <button className="button" type="submit">Salvar</button>

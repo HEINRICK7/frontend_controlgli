@@ -38,13 +38,11 @@ const Login = () => {
             try {
                 
                 const response = await api.post('session', data);
-                const { user, firstName, date, token } = response.data;
-                console.log(response.data)
+                const { token } = response.data;
+                
                 localStorage.setItem('token', token);
 
-                localStorage.setItem('userId', user._id);
-                localStorage.setItem('userName', firstName);
-                localStorage.setItem('userDate', date);
+                
 
                 history.push("/profile")
 

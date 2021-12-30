@@ -12,8 +12,8 @@ import './styles.css';
 import '../../global.css';
 
 export default function Register() {
-    const [firstName, setFirstName] = useState( '' );
-    const [lastName, setLastName] = useState( '' );
+    const [first_name, setFirst_name] = useState( '' );
+    const [last_name, setLast_name] = useState( '' );
     const [date, setDate] = useState( '' );
     const [email, setEmail] = useState( '' );
     const [password, setPassword] = useState( '' );
@@ -26,8 +26,8 @@ export default function Register() {
         e.preventDefault();
 
         const data = {
-            firstName,
-            lastName,
+            first_name,
+            last_name,
             date,
             email,
             password,
@@ -35,16 +35,24 @@ export default function Register() {
 
         await api.post('/users',data)
         .then(response => {
-            
-            console.log(response.data)
-            addToast(response.data.message, {
+            if(!data){
+                addToast('Preencha todos os campos',response.data, {
+                    appearance: 'info',
+                    autoDismiss: true,
+                })
+            }
+            else{
+                addToast('ok', {
                 appearance: 'success',
                 autoDismiss: true,
-            })
-        history('/session')
+                })
+                history('/session')
+            }
+            
+
         }).catch(error => {
-            console.log(error.response) 
-            addToast(error.response.data.message, {
+            
+            addToast('Preencha todos os campos', {
                 appearance: 'info',
                 autoDismiss: true,
             })
@@ -66,14 +74,14 @@ export default function Register() {
                             <input 
                                 type="text" 
                                 placeholder="Nome"
-                                value={firstName}
-                                onChange={ e => setFirstName(e.target.value)}
+                                value={first_name}
+                                onChange={ e => setFirst_name(e.target.value)}
                             />
                             <input 
                                 type="text" 
                                 placeholder="Sobrenome" 
-                                value={lastName}
-                                onChange={ e => setLastName(e.target.value)}
+                                value={last_name}
+                                onChange={ e => setLast_name(e.target.value)}
                             />
                        
 
