@@ -11,7 +11,7 @@
     "chart.js": "^2.9.4",
     "faker": "^5.5.3",
     "history": "^4.10.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.11.2",
     "react-dom": "^16.13.1",
