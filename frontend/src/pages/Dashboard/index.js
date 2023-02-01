@@ -14,16 +14,17 @@ export default function Dashboard (){
 
 
  const token = localStorage.getItem('token');
+ const user = localStorage.getItem("user");
 
     useEffect(() => {
-        api.get('profile', {
+        api.get(`/users/${user}/results`, {
             headers: {
                 "Authorization" : `Bearer ${token}`
             }
         }).then(response => {
             setResults(response.data);
         })
-    }, [token]);
+    }, [token, user]);
 
     
     return (

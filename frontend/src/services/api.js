@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://control-gli.herokuapp.com/',
+  baseURL: "https://dead-erin-gopher-shoe.cyclic.app/",
 });
 
 export default api;
