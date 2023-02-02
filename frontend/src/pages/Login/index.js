@@ -7,6 +7,8 @@ import { useToasts } from "react-toast-notifications";
 
 import api from "../../services/api";
 
+import Nav from "../../components/Nav"
+
 import "./styles.css";
 import "../../global.css";
 
@@ -35,10 +37,12 @@ const Login = () => {
         const response = await api.post("session", data);
         const { token } = response.data;
         const { _id } = response.data.user;
+        const { user } = response.data;
 
         localStorage.setItem("token", token);
-        localStorage.setItem("user", _id);
-        console.log(_id);
+        localStorage.setItem("userId", _id);
+        localStorage.setItem("user", user);
+        console.log(response.data);
         history.push("/profile");
       } catch (error) {
         addToast("Email ou senha incorreto", {
@@ -50,12 +54,14 @@ const Login = () => {
   };
 
   return (
-    <div className="logon-container">
+    <div>
+      <Nav />
+      <div className="logon-container">
+      
       <section className="form">
         <Bounce left cascade>
-          <h1>ControlGli</h1>
           <form onSubmit={handleLogin}>
-            <h1>Faça seu logon</h1>
+            <h1>Faça seu login</h1>
             <input
               placeholder="Seu Email"
               type="email"
@@ -87,10 +93,12 @@ const Login = () => {
             Uma forma simples, prática e colaborativa para controlar o seu
             diabetes.
           </h3>
-          <img src={contentImg} width={400} alt="Gli" />
+          <img src={contentImg} width={200} alt="Gli" />
         </Bounce>
       </div>
     </div>
+    </div>
+    
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { ToastProvider } from 'react-toast-notifications';
 
-
+import Home from './pages/Home'
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -30,7 +30,8 @@ const Routes = () => {
         <ToastProvider>
           <BrowserRouter>
             <Switch>
-              <Route path="/" exact component ={Login} />
+              <Route path="/" exact component ={Home} />
+              <Route path="/login" exact component ={Login} />
               <Route path="/register" exact component ={Register} />
               <PrivateRoute path="/profile" exact component ={Profile} />
               <PrivateRoute path="/results/new" exact component ={NewResult} />

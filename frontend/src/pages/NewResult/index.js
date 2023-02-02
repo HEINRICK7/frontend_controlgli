@@ -19,7 +19,7 @@ export default function NewResult() {
   const { addToast } = useToasts();
 
   const token = localStorage.getItem("token");
-  const id = localStorage.getItem("user");
+  const id = localStorage.getItem("userId");
 
   async function handleNewResult(e) {
     e.preventDefault();

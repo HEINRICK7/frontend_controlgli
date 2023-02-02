@@ -1,36 +1,42 @@
-import React from 'react';
-import { FiPower, FiUser} from 'react-icons/fi';
-import { Link, useHistory } from 'react-router-dom';
+import React from "react";
+import { FiPower, FiUser } from "react-icons/fi";
+import { Link, useHistory } from "react-router-dom";
 
-import './index.css'
-
+import "./index.css";
 
 const Nav = () => {
+  const history = useHistory();
+  const user = localStorage.getItem("user");
 
-    const history = useHistory();
+  const handleLogout = () => {
+    localStorage.clear();
 
-    const handleLogout = () => {
-        localStorage.clear();
+    history.push("/");
+  };
 
-        history.push('/')
-    }
-
-    return (
-        <div className="nav_bar">
-            <header>
+  return (
+    <div className="nav_bar">
+      {/* <header>
                 <span> 
                     <FiUser color="FFF" size={20}/>  
-                     <p>{}</p>
+                     <p>{user._id}</p>
                      <Link className="dashboard" to="/dashboard">Dashboard</Link>
                 </span>
                 
                 <button type="button" onClick={handleLogout}>
                     <FiPower color="FFF" size={20}/> 
                 </button>
+                <p>Login</p>
                
-            </header> 
-        </div>
-    );
-}
+            </header>  */}
+      <header>
+        <ul>
+          <li>Logo</li>
+          <li><Link to="/login" style={{listStyle: 'none', color: 'snow', textDecoration: 'none' }}>Login</Link></li>
+        </ul>
+      </header>
+    </div>
+  );
+};
 
 export default Nav;

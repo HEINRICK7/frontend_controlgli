@@ -17,12 +17,12 @@ const Profile = () => {
   const { addToast } = useToasts();
 
   const token = localStorage.getItem("token");
-  const user = localStorage.getItem("user");
+  const id = localStorage.getItem("userId");
 
- console.log(user)
+ console.log(id)
   useEffect(() => {
     api
-      .get(`/users/${user}/results`, {
+      .get(`/users/${id}/results`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +30,7 @@ const Profile = () => {
       .then((response) => {
         setResults(response.data);
       });
-  }, [token, user]);
+  }, [token, id]);
 
   const handleDeleteResult = async (id) => {
     try {

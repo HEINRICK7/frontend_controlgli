@@ -11,9 +11,9 @@
 }
 
 .logon-container section.form form h1 {
-  font-size: 32px;
+  font-size: 2rem;
   margin-bottom: 15px;
-  color:#63636d;
+  color:#0693E3;
   font-family: 'Roboto', sans-serif;
  
 }
@@ -36,7 +36,7 @@
 }    
 .logon-container h1{
   font-family: 'Comic-nue', sans-serif;
-  color: #ED5758;
+  color:#0693E3;
   font-size: 45px;
 
 }
@@ -50,7 +50,7 @@
 }
 .logon-container .content h3{
   width: 100%;
-  color:#ED5758;
+  color:#0693E3;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   height: 40px;
@@ -206,7 +206,7 @@
   }
   .logon-container .content h3{
     width: 100%;
-    color:#ED5758;
+    color:#0693E3;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     height: 40px;
