@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import ListUsers from './pages/ListUsers';
 import NewResult from './pages/NewResult';
 import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
@@ -33,6 +34,7 @@ const Routes = () => {
               <Route path="/" exact component ={Home} />
               <Route path="/login" exact component ={Login} />
               <Route path="/register" exact component ={Register} />
+              <PrivateRoute path="/users" exact component ={ListUsers} />
               <PrivateRoute path="/profile" exact component ={Profile} />
               <PrivateRoute path="/results/new" exact component ={NewResult} />
               <PrivateRoute path="/dashboard" exact component ={Dashboard} />

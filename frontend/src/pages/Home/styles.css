@@ -1,32 +1,42 @@
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 70vw;
+  margin-top: 70px;
+  margin-left: 22%;
+  margin-right: 25%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.935);
 }
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .section_left {
+  width: 70vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  padding: 20px;
-  width: 50vw;
+  padding: 0 50px;
+  width: 35vw;
   height: 80vh;
 }
 .section_left h1 {
-  text-align:left;
-  margin-top: 50px;
-  color: #0693E3;
+  width: 450px;
+  font-style: normal;
+  font-weight: 700;
   font-size: 2.5rem;
+  line-height: 125%;
+  /* or 33px */
+
+  letter-spacing: -0.222222px;
+
+  color: #919191;
 }
 .section_left p {
-  color: #5a5a5a;
+  color: #e07732;
   text-align: left;
   margin-top: 50px;
   margin-bottom: 10px;
-  color: #0693E3;
   font-size: 1.2rem;
 }
 .section_rigth {
@@ -35,18 +45,205 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  width: 50vw;
-  height: 80vh;
 }
 .login-button {
-  background-color: #005eff;
+  background-color: #e27a34;
+  width: 200px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: white;
-  padding: 10px 20px;
+  padding: 14px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
   cursor: pointer;
+}
+.section_rigth img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .container {
+    width: 70vw;
+    margin-top: 70px;
+    margin-left: 22%;
+    margin-right: 25%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.935);
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .section_left {
+    width: 70vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0 50px;
+  }
+  .section_left h1 {
+    width: 450px;
+    margin: 0 12%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 125%;
+    /* or 33px */
+  
+    letter-spacing: -0.222222px;
+  
+    color: #919191;
+  }
+  .section_rigth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .login-button {
+    background-color: #e27a34;
+    width: 200px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    margin-left: 12%;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .section_rigth img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .logon-container {
+    display: block;
+    
+  }
+  .logon-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 411px) and (max-width: 850px) {
+  .logon-container {
+    display: block;
+    
+  }
+  .logon-container section.form form {
+    width: 100%;
+    margin: 0 auto;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 300px) and (max-width: 480px) {
+  
+  .logon-container {
+    display: block; 
+    width: 100vw;
+    height: 100vh;
+    padding: 8px;
+    
+  }
+  .logon-container section.form {
+    padding: 0px;
+    width: 100%;
+  
+  }
+  .logon-container section.form form {
+    padding: 0;
+    width: 100%;
+    color: #41414d;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  
+  }
+  .logon-container section.form {
+    width: 100%;
+
+  }
+  .logon-container .content{
+    padding: 0;
+  }
+  .logon-container .content img{
+   margin-top: 50px;
+   width: 100%;
+   margin-bottom: 10px;
+  }
+  .logon-container .content h3{
+    width: 100%;
+    color:#0693E3;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 80px;
+  }
+  
 }

@@ -6,14 +6,16 @@ import "./index.css";
 
 const Nav = () => {
   const history = useHistory();
-  const user = localStorage.getItem("user");
-
+  const role = localStorage.getItem("role");
+  const token = localStorage.getItem("token");
+  console.log(role);
   const handleLogout = () => {
     localStorage.clear();
 
     history.push("/");
   };
-
+  const path = window.location.pathname;
+  console.log(path);
   return (
     <div className="nav_bar">
       {/* <header>
@@ -32,7 +34,69 @@ const Nav = () => {
       <header>
         <ul>
           <li>Logo</li>
-          <li><Link to="/login" style={{listStyle: 'none', color: 'snow', textDecoration: 'none' }}>Login</Link></li>
+          {(role === 0 && path === "/") || path === "/login" ? (
+            <div className="container_list">
+              <li>
+                <Link
+                  style={{
+                    width: "100%",
+                    listStyle: "none",
+                    color: "#919191",
+                    textDecoration: "none",
+                  }}
+                  to="/users"
+                >
+                  Lista de Usuários
+                </Link>
+              </li>
+              <li>
+                <Link
+                  style={{
+                    width: "100%",
+                    listStyle: "none",
+                    color: "#919191",
+                    textDecoration: "none",
+                  }}
+                  to="/register"
+                >
+                  Cadastrar Usuário
+                </Link>
+              </li>
+            </div>
+          ) : null}
+          {token ? (
+            <li
+              style={{
+                listStyle: "none",
+                color: "#FFFF",
+                textDecoration: "none",
+                cursor: "pointer",
+                background: "#e07732",
+                padding: 8,
+                borderRadius: 8,
+              }}
+              onClick={handleLogout}
+            >
+              Logout
+            </li>
+          ) : (
+            <li>
+              <Link
+                to="/login"
+                style={{
+                  listStyle: "none",
+                  color: "#FFFF",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  background: "#e07732",
+                  padding: 8,
+                  borderRadius: 8,
+                }}
+              >
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </header>
     </div>

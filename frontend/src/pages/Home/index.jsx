@@ -1,9 +1,10 @@
 import React from "react";
 import Nav from "../../components/Nav";
-import { Link } from 'react-router-dom';
+import Services from '../../components/Services'
+import { Link } from "react-router-dom";
 
 import "./styles.css";
-import contentImg from "../../assets/logo.svg";
+import contentImg from "../../assets/kelle.jpeg";
 
 const Home = () => {
   return (
@@ -11,30 +12,23 @@ const Home = () => {
       <Nav />
       <div className="main">
         <div className="section_left">
-          <h1>Bem-vindo à sua jornada de nutrição!</h1>
+          <h1>
+            Crie hábitos alimentares de qualidade para alcançar uma vida mais
+            saudável
+          </h1>
           <p>
-            Aqui, você terá acesso a informações e ferramentas para ajudá-lo a
-            alcançar seus objetivos de saúde e bem-estar. Com nosso app, você
-            pode monitorar sua ingestão de nutrientes, receber sugestões de
-            refeições equilibradas, armazenar suas receitas favoritas e
-            acompanhar seu progresso.
-            <br />
-            <br />
-            Para começar, basta fazer login com sua conta ou criar uma nova.
-            Então, prepare-se para transformar seus hábitos alimentares e
-            alcançar a saúde e o bem-estar que você merece.
-          </p>
-          <p>
-            <Link to={'/login'} className="login-button">
+            <Link to={"/login"} className="login-button">
               Vamos lá!
             </Link>
           </p>
         </div>
         <div className="section_rigth">
-          {" "}
-          <img src={contentImg} width={650} alt="Gli" />
+          <img src={contentImg} alt="Gli" />
+          <div className="blur"></div>
         </div>
+        
       </div>
+      <Services/>
     </div>
   );
 };

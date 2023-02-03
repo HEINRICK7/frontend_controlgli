@@ -11,7 +11,7 @@ import NavBar from "../../components/Nav";
 import "./styles.css";
 import "../../global.css";
 
-const Profile = () => {
+const ListUsers = () => {
   const [results, setResults] = useState([]);
 
   const { addToast } = useToasts();
@@ -22,7 +22,7 @@ const Profile = () => {
  console.log(role)
   useEffect(() => {
     api
-      .get(`/users/${id}/results`, {
+      .get(`/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -80,43 +80,27 @@ const Profile = () => {
       return idade;
     }
   };
-
+  console.log(results)
   return (
     <div className="profile-container">
       <NavBar />
-      <Link className="button" to={`/results/new`}>
-        Cadastrar novo resultado
-      </Link>
-      <h1> Resultados Cadastrados</h1>
+      <h1> Lista de Usuários</h1>
       <div className="card">
         <ul>
-          {results.map((result) => (
+          {results?.map((result) => (
             <li key={result._id}>
               <strong>
-                Nome:<p>{result.user_id.map((res) => res.first_name)}</p>
+                Nome:<p>{result.first_name}</p>
               </strong>
 
               <strong>
                 Idade:
                 <p>
-                  {result?.user_id?.map((res) => calculaIdade(res?.date))} Anos
+                  {calculaIdade(result?.date)} Anos
                 </p>
               </strong>
-              <strong>
-                <p style={{ color: "#ED5656", fontSize: 50 }}>
-                  {result.result} ml/dl
-                </p>
-              </strong>
-
               <strong>
                 <p>{result.description}</p>
-              </strong>
-
-              <strong>
-                DATA:
-                <p>
-                  <Moment format="DD/MM/YY">{result?.date}</Moment>
-                </p>
               </strong>
               <button
                 className="icon"
@@ -133,4 +117,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ListUsers;

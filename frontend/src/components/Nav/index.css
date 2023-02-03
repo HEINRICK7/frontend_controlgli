@@ -1,39 +1,29 @@
 .nav_bar header {
-    background-color: #0693E3;
-    padding:10px;
-    margin-bottom: 50px;
+  background-color: transparent !important;
+  padding: 10px;
+  margin-bottom: 50px;
 }
 .nav_bar header ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
-    color: snow;   
-}
-.nav_bar header button {
-    height: 40px;
-    width: 40px;
-    border-radius: 4px;
-    border: 1px solid #FFF;
-    background: transparent;
-    margin:-40px 10px -10px -10px;
-    float: right;
-    
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+  color: #919191;
 }
 .nav_bar header span p {
-    margin-left: 20px;
-    
-    
+  margin-left: 20px;
 }
-.nav_bar header span .dashboard {
-    cursor: pointer;
-    text-decoration: none;
-    color: #FFF;
-    margin:0 50px 0px 120px;
-    
-    
+.container_list {
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+}
+.container_list li {
+  padding: 0 10px;
+  text-decoration: none;
+  margin: 0 20px;
 }

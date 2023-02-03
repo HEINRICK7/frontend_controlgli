@@ -20,7 +20,8 @@ export default function NewResult() {
 
   const token = localStorage.getItem("token");
   const id = localStorage.getItem("userId");
-
+  const user = localStorage.getItem("user");
+  console.log(user)
   async function handleNewResult(e) {
     e.preventDefault();
 

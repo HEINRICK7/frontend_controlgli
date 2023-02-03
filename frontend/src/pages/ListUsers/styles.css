@@ -1,0 +1,217 @@
+.profile-container {
+ display: inline;
+
+}
+
+.profile-container  a {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    
+}
+
+
+.profile-container ul li button.icon {
+    width: 50px;  
+    background: rgb(255, 255, 255);
+    color: #ED5757;
+    
+}
+.profile-container header button:hover {
+    border-color: rgb(10, 10, 10);
+}
+.profile-container h1{
+    margin-top: 80px;
+    margin-bottom: 24px;
+    text-align: center;
+  
+}
+.profile-container .card {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 20px;
+}
+.profile-container .card ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-gap: 10px;
+    list-style: none;  
+    
+}
+.profile-container .card ul li{
+    padding: 24px;
+    border-radius: 10px;
+    position: relative;
+    margin: 10px auto;
+    width: 300px;
+    height: 350px;
+    box-shadow: 2px 2px 20px -10px rgba(68, 57, 57, 0.993), -5px -5px 30px 7px rgba(197, 193, 193, 0.22);
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.profile-container ul li button {
+    position: absolute;
+    right: 24px;
+    top:24px;
+    border: 0;
+}
+.profile-container ul li button:hover {
+    opacity: 0.8;
+}
+.profile-container ul li strong {
+    display:flex;
+    margin-top:30px ;
+    margin-bottom: 10px;
+    color: #595961;
+}
+.profile-container ul li p{
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+    margin-left: 5px;   
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+   
+    .profile-container  a {
+        display: block;
+        margin: 0 auto;
+        width: 20%;
+        
+    }
+    .profile-container .card {
+      
+        
+        width: 100%;
+    
+    }
+    
+
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    .profile-container  a {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        
+    }
+    .profile-container .card {
+        margin: 0 auto;
+        width: 100%;
+       
+    }
+    
+    .profile-container h1{
+        font-size: 24px;
+        margin-top: 80px;
+        margin-bottom: 24px;
+        text-align: center;
+      
+    }
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    .profile-container  a {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        
+    }
+    .profile-container .card {
+        width: 70%;
+        padding: 0px;
+       
+    }
+    
+    .profile-container h1{
+        font-size: 24px;
+        margin-top: 80px;
+        margin-bottom: 24px;
+        text-align: center;
+      
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 411px) and (max-width: 850px) {
+    .profile-container  a {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        
+    }
+    .profile-container .card {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0px;
+       
+    }
+    .profile-container h1{
+        font-size: 24px;
+        margin-top: 80px;
+        margin-bottom: 24px;
+        text-align: center;
+      
+    }
+    
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 300px) and (max-width: 480px) {
+
+    .profile-container  a {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        
+    }
+    .profile-container .card {
+        
+        margin: 0 auto;
+        width: 100%;
+        padding: 0px;
+       
+    }
+    .profile-container .card ul {
+        display: block;
+        margin: 0 auto;
+        list-style: none;  
+        
+    }
+    .profile-container h1{
+        font-size: 24px;
+        margin-top: 80px;
+        margin-bottom: 24px;
+        text-align: center;
+      
+    }
+    
+  }
+  

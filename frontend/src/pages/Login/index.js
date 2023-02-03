@@ -37,13 +37,17 @@ const Login = () => {
         const response = await api.post("session", data);
         const { token } = response.data;
         const { _id } = response.data.user;
-        const { user } = response.data;
-
+        const { role } = response.data;
+        console.log(role)
         localStorage.setItem("token", token);
         localStorage.setItem("userId", _id);
-        localStorage.setItem("user", user);
-        console.log(response.data);
-        history.push("/profile");
+        localStorage.setItem("role", role);
+        if(role === 0){
+           history.push("/profile")
+        }else {
+          history.push("/users")
+        }
+       ;
       } catch (error) {
         addToast("Email ou senha incorreto", {
           appearance: "error",
@@ -81,7 +85,7 @@ const Login = () => {
             </button>
             <hr />
             <Link className="back-link" to="/register">
-              <FiLogIn size={16} color="#ed5757" />
+              <FiLogIn size={16} color="#e27a34" />
               Ainda não tem uma conta?
             </Link>
           </form>
