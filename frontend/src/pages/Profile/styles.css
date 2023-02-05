@@ -1,6 +1,9 @@
 .profile-container {
- display: inline;
-
+    width: 70vw;
+    margin:40px auto;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.935);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .profile-container  a {
@@ -50,7 +53,6 @@
     box-shadow: 2px 2px 20px -10px rgba(68, 57, 57, 0.993), -5px -5px 30px 7px rgba(197, 193, 193, 0.22);
     cursor: pointer;
     transition: 0.5s;
-
 }
 
 .profile-container ul li button {
@@ -62,36 +64,46 @@
 .profile-container ul li button:hover {
     opacity: 0.8;
 }
-.profile-container ul li strong {
-    display:flex;
-    margin-top:30px ;
+
+.profile-container .card ul li strong {
+    display: flex;
+    margin-top: 10px;
     margin-bottom: 10px;
     color: #595961;
 }
+
+.profile-container ul li strong {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #595961;
+    line-height: 30px
+}
+
 .profile-container ul li p{
     color: #737380;
-    line-height: 21px;
+    line-height: 20px;
     font-size: 16px;
     margin-left: 5px;   
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
    
-    .profile-container  a {
-        display: block;
+    .profile-container a {
+        display: flex;
         margin: 0 auto;
         width: 20%;
-        
+        line-height: 24px;
+        justify-content: center;
+        align-items: center;
     }
+
     .profile-container .card {
-      
-        
         width: 100%;
-    
     }
     
 
-  }
+}
   
   /* 
     ##Device = Tablets, Ipads (portrait)
@@ -128,12 +140,14 @@
   
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     
-    .profile-container  a {
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-        
+    .profile-container {
+        width: 100vw;
+        margin: 0px auto;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.935);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
+
     .profile-container .card {
         width: 70%;
         padding: 0px;
@@ -173,10 +187,17 @@
         margin-top: 80px;
         margin-bottom: 24px;
         text-align: center;
-      
     }
-    
-    
+
+    .menu_icon {
+        display: block;
+        position: absolute;
+        top: 5%;
+        right: 12%;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
   }
   
   /* 
@@ -186,31 +207,41 @@
   
   @media (min-width: 300px) and (max-width: 480px) {
 
-    .profile-container  a {
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-        
+    .profile-container {
+        width: 100vw;
+        margin: 0px auto;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.935);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
+
+    .profile-container a {
+        display: flex;
+        margin: 0px auto;
+        width: 38%;
+        height: 52px;
+        justify-content: center;
+        align-items: center;
+    }
+
     .profile-container .card {
-        
         margin: 0 auto;
         width: 100%;
         padding: 0px;
        
     }
+
     .profile-container .card ul {
         display: block;
         margin: 0 auto;
         list-style: none;  
-        
     }
+
     .profile-container h1{
         font-size: 24px;
         margin-top: 80px;
         margin-bottom: 24px;
         text-align: center;
-      
     }
     
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 import { Table, Tag, Space, message, Popconfirm, Avatar } from "antd";
 import { useToasts } from "react-toast-notifications";
 import api from "../../services/api";
@@ -50,8 +51,8 @@ const ListUsers = () => {
       key: "name",
       filters: results?.map((res) => {
         return {
-          text: `${res.first_name}`,
-          value: `${res.first_name}`,
+          text:`${res.first_name}`,
+          value:`${res.first_name}`,
         };
       }),
       filterMode: "tree",
@@ -146,7 +147,7 @@ const ListUsers = () => {
 
   const data = results?.map((res) => {
     return {
-      name: `${res.first_name}`,
+      name: <Link to="/user">{res.first_name}</Link>,
       phone: `${res.date}`,
     };
   });
