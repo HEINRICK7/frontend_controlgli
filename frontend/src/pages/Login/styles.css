@@ -1,21 +1,40 @@
 .logon-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 70px;
-  height: 100vh;
-  
+  width: 70vw;
+  margin: 40px auto;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.935);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .logon-container section.form {
+  margin: 0 auto;
   padding: 50px;
-
+  width: 80%;
 }
+.logon-container .button section.form {
+  width: 325px;
+  height: 64px;
+  background: #f7b12a;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
 
+  color: #f5f5f5;
+}
+.logon-container input {
+  margin: 20px 0 10px 0;
+  border: 2px solid #a2a0a0;
+  border-radius: 12px;
+}
 .logon-container section.form form h1 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 15px;
-  color:#0693E3;
-  font-family: 'Roboto', sans-serif;
- 
+  font-style: normal;
+  font-weight: 600;
+  line-height: 45px;
+
+  color: #a2a0a0;
 }
 .logon-container section.form form {
   width: 60%;
@@ -26,41 +45,37 @@
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s;
-
 }
 .logon-container section.form form svg {
   margin-right: 8px;
 }
 .logon-container section.form form a:hover {
   opacity: 0.8;
-}    
-.logon-container h1{
-  font-family: 'Comic-nue', sans-serif;
-  color:#0693E3;
-  font-size: 45px;
-
 }
-.logon-container .content{
+.logon-container h1 {
+  font-family: "Comic-nue", sans-serif;
+  color: #0693e3;
+  font-size: 45px;
+}
+.logon-container .content {
   padding: 50px;
 }
-.logon-container .content img{
- margin-top: 50px;
- width: 90%;
- margin-bottom: 10px;
+.logon-container .content img {
+  margin-top: 50px;
+  width: 90%;
+  margin-bottom: 10px;
 }
-.logon-container .content h3{
+.logon-container .content h3 {
   width: 100%;
-  color:#0693E3;
-  font-family: 'Raleway', sans-serif;
+  color: #0693e3;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   height: 40px;
   font-size: 20px;
 }
 @media (min-width: 1025px) and (max-width: 1280px) {
-  
   .logon-container {
     display: block;
-    
   }
   .logon-container section.form form {
     width: 100%;
@@ -70,13 +85,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .logon-container section.form {
     width: 100%;
-
   }
-  
 }
 
 /* 
@@ -85,10 +97,8 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
   .logon-container {
     display: block;
-    
   }
   .logon-container section.form form {
     width: 100%;
@@ -98,13 +108,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .logon-container section.form {
     width: 100%;
-
   }
-  
 }
 
 /* 
@@ -113,10 +120,9 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
   .logon-container {
     display: block;
-    
+    height: 100%;
   }
   .logon-container section.form form {
     width: 100%;
@@ -126,13 +132,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .logon-container section.form {
     width: 100%;
-
   }
-  
 }
 
 /* 
@@ -143,7 +146,7 @@
 @media (min-width: 411px) and (max-width: 850px) {
   .logon-container {
     display: block;
-    
+    height: 100%;
   }
   .logon-container section.form form {
     width: 100%;
@@ -153,14 +156,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .logon-container section.form {
     width: 100%;
-
   }
-  
-  
 }
 
 /* 
@@ -169,49 +168,94 @@
 */
 
 @media (min-width: 300px) and (max-width: 480px) {
-  
   .logon-container {
-    display: block; 
+    display: block;
     width: 100vw;
     height: 100vh;
     padding: 8px;
-    
+    margin: 0 auto;
   }
   .logon-container section.form {
     padding: 0px;
     width: 100%;
-  
   }
   .logon-container section.form form {
     padding: 0;
-    width: 100%;
+    width: 90%;
     color: #41414d;
     font-size: 14px;
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .logon-container section.form {
     width: 100%;
-
   }
-  .logon-container .content{
+  .logon-container .content {
     padding: 0;
   }
-  .logon-container .content img{
-   margin-top: 50px;
-   width: 100%;
-   margin-bottom: 10px;
-  }
-  .logon-container .content h3{
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    color:#0693E3;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    height: 40px;
-    font-size: 20px;
-    margin-top: 80px;
+    height: 90vh;
+    position: absolute;
+    top: 100px;
+    left: -120%;
+    opacity: 1;
+    transition: all 0.5s ease;
   }
-  
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .menu_icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 100px;
+    left: -120%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .menu_icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 }

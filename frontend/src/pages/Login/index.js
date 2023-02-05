@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import { FiLogIn } from "react-icons/fi";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-import Bounce from "react-reveal/Bounce";
 import { useToasts } from "react-toast-notifications";
 
 import api from "../../services/api";
 
-import Nav from "../../components/Nav"
+import Nav from "../../components/Nav";
 
 import "./styles.css";
 import "../../global.css";
-
-import contentImg from "../../assets/gli/login.svg";
 
 const Login = () => {
   const history = useHistory();
@@ -38,16 +34,14 @@ const Login = () => {
         const { token } = response.data;
         const { _id } = response.data.user;
         const { role } = response.data;
-        console.log(role)
         localStorage.setItem("token", token);
         localStorage.setItem("userId", _id);
         localStorage.setItem("role", role);
-        if(role === 0){
-           history.push("/profile")
-        }else {
-          history.push("/users")
+        if (role === 0) {
+          history.push("/profile");
+        } else {
+          history.push("/users");
         }
-       ;
       } catch (error) {
         addToast("Email ou senha incorreto", {
           appearance: "error",
@@ -59,11 +53,9 @@ const Login = () => {
 
   return (
     <div>
-      <Nav />
       <div className="logon-container">
-      
-      <section className="form">
-        <Bounce left cascade>
+        <Nav />
+        <section className="form">
           <form onSubmit={handleLogin}>
             <h1>Faça seu login</h1>
             <input
@@ -83,26 +75,10 @@ const Login = () => {
             <button className="button" type="submit">
               Entrar
             </button>
-            <hr />
-            <Link className="back-link" to="/register">
-              <FiLogIn size={16} color="#e27a34" />
-              Ainda não tem uma conta?
-            </Link>
           </form>
-        </Bounce>
-      </section>
-      <div className="content">
-        <Bounce right cascade>
-          <h3>
-            Uma forma simples, prática e colaborativa para controlar o seu
-            diabetes.
-          </h3>
-          <img src={contentImg} width={200} alt="Gli" />
-        </Bounce>
+        </section>
       </div>
     </div>
-    </div>
-    
   );
 };
 

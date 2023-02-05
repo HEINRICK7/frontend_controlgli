@@ -1,8 +1,9 @@
 .register-container {
-  height: 100vh;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
- 
+  width: 70vw;
+  margin: 40px auto;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.935);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .register-container section {
@@ -10,19 +11,20 @@
 }
 .register-container section h2 {
   font-size: 32px;
-  color:#6f6f7c;
+  color: #6f6f7c;
 }
-.register-container section h1{
-  font-family: 'Comic-nue', sans-serif;
-  color: #ED5758;
-  font-size: 45px;
-  margin-top: 20px;
+.register-container section h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
 
+  color: #5d5757;
 }
 .register-container section form {
+  margin: 0 auto;
   padding: 80px;
-  width: 100%;
-
+  width: 70%;
 }
 .register-container section form a {
   display: flex;
@@ -33,40 +35,34 @@
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s;
-
 }
 .register-container section form input {
-  border-radius: 4px; 
+  border-radius: 4px;
   margin-bottom: 8px;
 }
-.register-container section hr{
+.register-container section hr {
   margin-top: 20px;
 }
-.register-container .content{
+.register-container .content {
   margin-top: 40px;
-  padding:80px;
-
+  padding: 80px;
 }
-.register-container .content img{
+.register-container .content img {
   margin: 0 auto;
   width: 100%;
 }
-.register-container .content h3{
+.register-container .content h3 {
   width: 100%;
-  color:#ED5758;
-  font-family: 'Raleway', sans-serif;
+  color: #ed5758;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   height: 40px;
   font-size: 20px;
-  
-
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  
   .register-container {
     display: block;
-    
   }
   .register-container section.form form {
     width: 100%;
@@ -76,13 +72,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .register-container section.form {
     width: 100%;
-
   }
-  
 }
 
 /* 
@@ -91,10 +84,8 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
   .register-container {
     display: block;
-    
   }
   .register-container section.form form {
     width: 100%;
@@ -104,13 +95,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .register-container section.form {
     width: 100%;
-
   }
-  
 }
 
 /* 
@@ -119,10 +107,8 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
   .register-container {
     display: block;
-    
   }
   .register-container section.form form {
     width: 100%;
@@ -132,13 +118,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .register-container section.form {
     width: 100%;
-
   }
-  
 }
 
 /* 
@@ -149,7 +132,6 @@
 @media (min-width: 411px) and (max-width: 850px) {
   .register-container {
     display: block;
-    
   }
   .register-container section.form form {
     width: 100%;
@@ -159,14 +141,10 @@
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
   }
   .register-container section.form {
     width: 100%;
-
   }
-  
-  
 }
 
 /* 
@@ -175,37 +153,32 @@
 */
 
 @media (min-width: 300px) and (max-width: 480px) {
-  
   .register-container {
-    display: block; 
+    display: block;
     width: 100vw;
     height: 100vh;
-    
   }
   .register-container section.form {
     padding: 0px;
-    width: 100%; 
-  
+    width: 100%;
   }
   .register-container section form {
     padding: 10px;
     width: 100%;
     color: #41414d;
-   
+
     font-size: 14px;
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  
-  }
-  
-  .register-container .content{
-    padding: 10px;
-  }
-  .register-container .content img{
-   margin-top: 50px;
-   width: 100%;
-   margin-bottom: 10px;
   }
 
+  .register-container .content {
+    padding: 10px;
+  }
+  .register-container .content img {
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
