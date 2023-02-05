@@ -85,7 +85,7 @@ const Profile = () => {
     <div className="profile-container">
       <NavBar />
       <Link className="button" to={`/results/new`}>
-        Cadastrar novo resultado
+        Cadastrar novo usuário
       </Link>
       <h1> Resultados Cadastrados</h1>
       <div className="card">
@@ -103,12 +103,13 @@ const Profile = () => {
                 </p>
               </strong>
               <strong>
-                <p style={{ color: "#ED5656", fontSize: 50 }}>
+                <p style={{ color: "#ED5656", fontSize: 40 }}>
                   {result.result} ml/dl
                 </p>
               </strong>
 
               <strong>
+                Descrição:
                 <p>{result.description}</p>
               </strong>
 
