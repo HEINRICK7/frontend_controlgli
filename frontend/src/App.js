@@ -1,10 +1,8 @@
-import React from 'react';
-
-import Routes from './routes'
+import React from "react";
+import 'antd/dist/reset.css';
+import Routes from "./routes";
 function App() {
-  return (
-   <Routes/>
-  );
+  return <Routes />;
 }
 
 export default App;
