@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { FiPower, FiUser } from "react-icons/fi";
+//import { FiPower, FiUser } from "react-icons/fi";
 import { Link, useHistory } from "react-router-dom";
 
 import { FiMenu, FiX } from "react-icons/fi";
+import Logo from "../../assets/Logo_u.png";
 
 import "./index.css";
 
@@ -21,7 +22,7 @@ const Nav = () => {
   };
 
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  //const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -43,75 +44,64 @@ const Nav = () => {
       <header>
         {window.innerWidth <= 960 ? (
           <>
-            <div className="menu_icon" onClick={handleClick}>
-              {click ? <FiX /> : <FiMenu />}
+            <div className="header">
+              <div className="menu_icon" onClick={handleClick}>
+                {click ? <FiX /> : <FiMenu />}
+              </div>
             </div>
-            <div>Logo</div>
+            <div className="Logo">
+              <img src={Logo} style={{ width: "20rem" }} alt="logo" />
+            </div>
           </>
         ) : (
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {role !== 0 && (path === "/users" || path === "/register") ? (
-              <div className="container_list">
-                <li
-                  style={
-                    path === "/users"
-                      ? { border: "0", borderBottom: "2px solid #F7B12A" }
-                      : null
-                  }
-                >
-                  <Link
-                    style={{
-                      width: "100%",
-                      listStyle: "none",
-                      color: "#919191",
-                      textDecoration: "none",
-                    }}
-                    to="/users"
-                  >
-                    Lista de Usuários
-                  </Link>
-                </li>
-                <li
-                  style={
-                    path === "/register"
-                      ? { border: "0", borderBottom: "2px solid #F7B12A" }
-                      : null
-                  }
-                >
-                  <Link
-                    style={{
-                      width: "100%",
-                      listStyle: "none",
-                      color: "#919191",
-                      textDecoration: "none",
-                    }}
-                    to="/register"
-                  >
-                    Cadastrar Usuário
-                  </Link>
-                </li>
-              </div>
-            ) : null}
-            {token ? (
-              <li
-                style={{
-                  listStyle: "none",
-                  color: "#FFFF",
-                  textDecoration: "none",
-                  cursor: "pointer",
-                  background: "#e07732",
-                  padding: 8,
-                  borderRadius: 8,
-                }}
-                onClick={handleLogout}
-              >
-                Logout
-              </li>
-            ) : (
-              <li>
-                {path === "/login" ? (
-                  <Link
-                    to="/"
+          <>
+            <div style={{ width: "100%" }}>
+              <img src={Logo} width={180} alt="logo" />
+              <ul className={click ? "nav-menu active" : "nav-menu"}>
+                {role !== 0 && (path === "/users" || path === "/register") ? (
+                  <div className="container_list">
+                    <li
+                      style={
+                        path === "/users"
+                          ? { border: "0", borderBottom: "2px solid #F7B12A" }
+                          : null
+                      }
+                    >
+                      <Link
+                        style={{
+                          width: "100%",
+                          listStyle: "none",
+                          color: "#919191",
+                          textDecoration: "none",
+                        }}
+                        to="/users"
+                      >
+                        Lista de Usuários
+                      </Link>
+                    </li>
+                    <li
+                      style={
+                        path === "/register"
+                          ? { border: "0", borderBottom: "2px solid #F7B12A" }
+                          : null
+                      }
+                    >
+                      <Link
+                        style={{
+                          width: "100%",
+                          listStyle: "none",
+                          color: "#919191",
+                          textDecoration: "none",
+                        }}
+                        to="/register"
+                      >
+                        Cadastrar Usuário
+                      </Link>
+                    </li>
+                  </div>
+                ) : null}
+                {token ? (
+                  <li
                     style={{
                       listStyle: "none",
                       color: "#FFFF",
@@ -121,28 +111,48 @@ const Nav = () => {
                       padding: 8,
                       borderRadius: 8,
                     }}
+                    onClick={handleLogout}
                   >
-                    Home
-                  </Link>
+                    Logout
+                  </li>
                 ) : (
-                  <Link
-                    to="/login"
-                    style={{
-                      listStyle: "none",
-                      color: "#FFFF",
-                      textDecoration: "none",
-                      cursor: "pointer",
-                      background: "#e07732",
-                      padding: 8,
-                      borderRadius: 8,
-                    }}
-                  >
-                    Login
-                  </Link>
+                  <li>
+                    {path === "/login" ? (
+                      <Link
+                        to="/"
+                        style={{
+                          listStyle: "none",
+                          color: "#FFFF",
+                          textDecoration: "none",
+                          cursor: "pointer",
+                          background: "#e07732",
+                          padding: 8,
+                          borderRadius: 8,
+                        }}
+                      >
+                        Home
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/login"
+                        style={{
+                          listStyle: "none",
+                          color: "#FFFF",
+                          textDecoration: "none",
+                          cursor: "pointer",
+                          background: "#e07732",
+                          padding: 8,
+                          borderRadius: 8,
+                        }}
+                      >
+                        Login
+                      </Link>
+                    )}
+                  </li>
                 )}
-              </li>
-            )}
-          </ul>
+              </ul>
+            </div>
+          </>
         )}
       </header>
     </div>
