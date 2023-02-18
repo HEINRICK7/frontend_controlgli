@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
-import { Table, Tag, Space, message, Popconfirm, Avatar } from "antd";
-import { useToasts } from "react-toast-notifications";
+import { Link } from "react-router-dom";
+import { Table, Space, message, Popconfirm, Avatar } from "antd";
+//import { useToasts } from "react-toast-notifications";
 import api from "../../services/api";
 import NavBar from "../../components/Nav";
 
@@ -13,7 +13,7 @@ import "../../global.css";
 const ListUsers = () => {
   const [results, setResults] = useState([]);
 
-  const { addToast } = useToasts();
+  //const { addToast } = useToasts();
 
   const token = localStorage.getItem("token");
   const id = localStorage.getItem("userId");
@@ -33,6 +33,13 @@ const ListUsers = () => {
       });
   }, [token, id]);
 
+  const data = results?.map((res, index) => {
+    return {
+      key: index,
+      name: <Link to={`/user/${res._id}`}>{res.first_name}</Link>,
+    };
+  });
+
   const columns = [
     {
       render: () => {
@@ -51,13 +58,12 @@ const ListUsers = () => {
       key: "name",
       filters: results?.map((res) => {
         return {
-          text:`${res.first_name}`,
-          value:`${res.first_name}`,
+          key: `${res._id}`,
+          text: `${res.first_name}`,
+          value: `${res.first_name}`,
         };
       }),
-      filterMode: "tree",
       filterSearch: true,
-      onFilter: (value, record) => record.name.startsWith(value),
       width: "90%",
     },
     {
@@ -72,7 +78,7 @@ const ListUsers = () => {
                 padding: 4,
                 borderRadius: 4,
                 color: "#FFFFFF",
-                cursor: "pointer"
+                cursor: "pointer",
               }}
             />
             <Popconfirm
@@ -96,61 +102,54 @@ const ListUsers = () => {
       ),
     },
   ];
-  const handleDeleteResult = async (id) => {
-    try {
-      await api.delete(`results/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      addToast("resultado deletado com sucesso", {
-        appearance: "info",
-        autoDismiss: true,
-      });
-      setResults(results.filter((incident) => incident._id !== id));
-    } catch (err) {
-      addToast("Erro ao deletar resultado, tente novamente", {
-        appearance: "error",
-        autoDismiss: true,
-      });
-    }
-  };
+  // const handleDeleteResult = async (id) => {
+  //   try {
+  //     await api.delete(`results/${id}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     addToast("resultado deletado com sucesso", {
+  //       appearance: "info",
+  //       autoDismiss: true,
+  //     });
+  //     setResults(results?.filter((incident) => incident._id !== id));
+  //   } catch (err) {
+  //     addToast("Erro ao deletar resultado, tente novamente", {
+  //       appearance: "error",
+  //       autoDismiss: true,
+  //     });
+  //   }
+  // };
 
-  const calculaIdade = (data) => {
-    if (data === undefined) {
-      return;
-    }
+  // const calculaIdade = (data) => {
+  //   if (data === undefined) {
+  //     return;
+  //   }
 
-    const anoNascParts = data?.split("/");
-    const dataAtual = new Date();
-    const anoAtual = dataAtual.getFullYear();
-    const diaNasc = Number(anoNascParts[0]);
-    const mesNasc = Number(anoNascParts[1]);
-    const anoNasc = Number(anoNascParts[2]);
+  //   const anoNascParts = data?.split("/");
+  //   const dataAtual = new Date();
+  //   const anoAtual = dataAtual.getFullYear();
+  //   const diaNasc = Number(anoNascParts[0]);
+  //   const mesNasc = Number(anoNascParts[1]);
+  //   const anoNasc = Number(anoNascParts[2]);
 
-    const mesAtual = dataAtual.getMonth() + 1;
-    const diaAtual = dataAtual.getDate();
-    let idade = anoAtual - anoNasc;
+  //   const mesAtual = dataAtual.getMonth() + 1;
+  //   const diaAtual = dataAtual.getDate();
+  //   let idade = anoAtual - anoNasc;
 
-    if (mesAtual === mesNasc && diaAtual < diaNasc) {
-      return idade;
-    }
-    if (mesAtual === mesNasc && diaAtual > diaNasc) {
-      return (idade = idade + 1);
-    }
-    if (mesAtual === mesNasc && diaAtual <= diaNasc) {
-      return (idade = idade + 1);
-    } else {
-      return idade;
-    }
-  };
-
-  const data = results?.map((res) => {
-    return {
-      name: <Link to="/user">{res.first_name}</Link>,
-      phone: `${res.date}`,
-    };
-  });
+  //   if (mesAtual === mesNasc && diaAtual < diaNasc) {
+  //     return idade;
+  //   }
+  //   if (mesAtual === mesNasc && diaAtual > diaNasc) {
+  //     return (idade = idade + 1);
+  //   }
+  //   if (mesAtual === mesNasc && diaAtual <= diaNasc) {
+  //     return (idade = idade + 1);
+  //   } else {
+  //     return idade;
+  //   }
+  // };
 
   return (
     <div className="profile_container">
