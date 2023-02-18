@@ -13,7 +13,7 @@
 .logon-container .button section.form {
   width: 325px;
   height: 64px;
-  background: #f7b12a;
+  background: #E97401;
   border-radius: 16px;
   font-style: normal;
   font-weight: 400;
@@ -217,16 +217,11 @@
   .menu_icon {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 20px;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
-  .logo {
-    position: absolute;
-    left: 10px;
-    top: 10px;
   }
 }
 @media screen and (max-width: 960px) {
@@ -252,7 +247,7 @@
   .menu_icon {
     display: block;
     position: absolute;
-    top: 0;
+    top: 100px;
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
