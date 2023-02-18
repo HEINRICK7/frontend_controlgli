@@ -1,0 +1,7 @@
+.user_container {
+  width: 70vw;
+  margin:40px auto;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.935);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

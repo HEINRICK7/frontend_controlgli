@@ -18,8 +18,8 @@ const Profile = () => {
 
   const token = localStorage.getItem("token");
   const id = localStorage.getItem("userId");
-  const role = localStorage.getItem("role")
- console.log(role)
+  const role = localStorage.getItem("role");
+  console.log(role);
   useEffect(() => {
     api
       .get(`/users/${id}/results`, {
@@ -85,7 +85,7 @@ const Profile = () => {
     <div className="profile-container">
       <NavBar />
       <Link className="button" to={`/results/new`}>
-        Cadastrar novo usuário
+        Cadastrar novo Resultado
       </Link>
       <h1> Resultados Cadastrados</h1>
       <div className="card">
